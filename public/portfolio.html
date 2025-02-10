@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+ 
+   
+    <title>React App</title>
+  
+  </head>
+  <style>
+    
+    body{
+      background-color: #deb887;
+    }
+
+    p{
+      font-size: 15px;   
+      font-weight: 100;
+      font-family: 'Lucida Handwriting', cursive;
+    }
+
+
+    .header-box {
+        height: 15vh;
+        padding: 10px;
+        padding-left: 15%; 
+        background-color: #72372c;
+        color: #deb887;
+        align-content: center;
+        font-family: 'Lucida Handwriting', cursive;
+        font-size: 6vh;
+        font-weight: 100;
+    }
+
+    .row{
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+      gap: 20px;
+    }
+    .col{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 20px;
+      font-family: 'Lucida Handwriting', cursive;
+      font-size: 6vh;
+      
+    }
+
+    .col-card{
+      display: flex;
+    }
+
+    .row-card {
+      display: flex;
+      align-items: stretch; 
+      justify-content: center;
+      gap: 20px; 
+      flex-wrap: wrap;
+      padding: 0;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+.fancy {
+ background-color: transparent;
+ border: 2px solid #72372c;
+ border-radius: 0;
+ box-sizing: border-box;
+ color: #fff;
+ cursor: pointer;
+ display: inline-block;
+ float: none;
+ font-weight: 700;
+ letter-spacing: 0.05em;
+ margin: 0;
+ outline: none;
+ overflow: visible;
+ padding: 1.25em 2em;
+ position: relative;
+ text-align: center;
+ text-decoration: none;
+ text-transform: none;
+ transition: all 0.3s ease-in-out;
+ user-select: none;
+ font-size: 13px;
+}
+
+.fancy::before {
+ content: " ";
+ width: 1.5625rem;
+ height: 2px;
+ background: #72372c;
+ top: 50%;
+ left: 1.5em;
+ position: absolute;
+ transform: translateY(-50%);
+ transform-origin: center;
+ transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+ font-size: 1.125em;
+ line-height: 1.33333em;
+ padding-left: 2em;
+ display: block;
+ text-align: left;
+ transition: all 0.3s ease-in-out;
+ text-transform: uppercase;
+ text-decoration: none;
+ color: #72372c;
+}
+
+.fancy .top-key {
+ height: 2px;
+ width: 1.5625rem;
+ top: -2px;
+ left: 0.625rem;
+ position: absolute;
+ background: #e8e8e8;
+ transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+ height: 2px;
+ width: 1.5625rem;
+ right: 1.875rem;
+ bottom: -2px;
+ position: absolute;
+ background: #e8e8e8;
+ transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+ height: 2px;
+ width: 0.625rem;
+ right: 0.625rem;
+ bottom: -2px;
+ position: absolute;
+ background: #e8e8e8;
+ transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+ color: white;
+ background: #deb887;
+}
+
+.fancy:hover::before {
+ width: 0.9375rem;
+ background: white;
+}
+
+.fancy:hover .text {
+ color: white;
+ padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+ left: -2px;
+ width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+ .fancy:hover .bottom-key-2 {
+ right: 0;
+ width: 0;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50px;
+  margin-top: 50px;
+  
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+  list-style: none;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #72372c;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #72372c;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+
+
+.card {
+  font-family: Montserrat, sans-serif;
+  width: 300px;
+  flex-grow: 1;
+  translate: -6px -6px;
+  background: #deb887;
+  border: 3px solid #000000;
+  box-shadow: 12px 12px 0 #000000;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.head {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  width: 100%;
+  height: 32px;
+  background: #ffffff;
+  padding: 5px 12px;
+  color: #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.content {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  flex-grow: 1;
+  color: #24262a;
+}
+
+.button {
+  padding: 5px 15px;
+  margin-top: 10px;
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0 #000000;
+  font-weight: 750;
+  background: #72372c;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.button:hover {
+  translate: 1.5px 1.5px;
+  box-shadow: 1.5px 1.5px 0 #000000;
+  background: #1ac2ff;
+}
+
+.button:active {
+  translate: 3px 3px;
+  box-shadow: 0 0 0 #000000;
+}
+
+.card:hover {
+  translate: -6px;
+}
+
+
+
+  </style>
+  <body>
+    
+    <h1 class="header-box">Portfolio</h1>
+
+    <div class="row">
+        <div class="col">
+          <a class="fancy" onclick= "handleNavigation('about-me.html')">
+            <span class="top-key"></span>
+            <span class="text">About Me</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+        </div>
+      
+        <div class="col">
+          <a class="fancy"  onclick="handleNavigation('portfolio.html')">
+            <span class="top-key"></span>
+            <span class="text">Portfolio</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+        </div>
+
+        <div class="col">
+          <a class="fancy"  onclick= "handleNavigation('contact-me.html')">
+            <span class="top-key"></span>
+            <span class="text">Contact Me</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+          </a>
+        </div>
+    </div>  
+<div class="row">
+<ul class="example-2">
+  
+  <li class="icon-content">
+    <a
+      href="https://lt.linkedin.com/in/evaldas-dranseika-590422278"
+      aria-label="LinkedIn"
+      data-social="linkedin"
+    >
+      <div class="filled"></div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-linkedin"
+        viewBox="0 0 16 16"
+        xml:space="preserve"
+      >
+        <path
+          d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+    <div class="tooltip">LinkedIn</div>
+  </li>
+  <li class="icon-content">
+    <a href="https://github.com/Frenzy238" aria-label="GitHub" data-social="github">
+      <div class="filled"></div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-github"
+        viewBox="0 0 16 16"
+        xml:space="preserve"
+      >
+        <path
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </a>
+    <div class="tooltip">GitHub</div>
+  </li>
+  
+  
+</ul>
+</div>
+
+
+<div class="row-card">
+
+<div class="col-card">
+  <div class="card">
+    <div class="head">Java-Based Desktop E-Shop Application</div>
+    <div class="content">
+        Built a desktop app with CRUD functionality, chat, comments, warehouses, and order management for efficient deliveries.   
+        <br></br>
+        Technologies Used:
+          <li>Java</li>
+          <li>Hibernate</li>
+          <li>MySQL (Database)</li>
+          <li>XML-based UI</li>
+      <br />
+      <button class="button" onclick="location.href='https://github.com/Frenzy238/First_Java_Desktop_App'">Go to repository</button>
+      
+    </div>
+  </div>
+</div>
+
+<div class="col-card">
+  <div class="card">
+    <div class="head">Website portfolio with React.js, Three.js etc.</div>
+    <div class="content">
+      Created a modern portfolio website with 3D object and a contact feature, with lots of cards.        
+      <br></br>
+        Technologies Used:
+          <li>JavaScript</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>React.js</li>
+          <li>Three.js</li>
+      <br />
+      <button class="button">Go to Website</button>
+      <button class="button"  onclick="location.href='https://github.com/Frenzy238/Portfolio_Website'"  >Go to repository</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-card">
+  <div class="card">
+    <div class="head">CRM Website</div>
+    <div class="content">
+      Developed a Client Relationship Management (CRM) system to store client data, generate invoices and commercial offers, send messages via the UI, track monthly sales and user activity, and manage tasks, reminders, and equipment details with photos for easy access. Implemented AI interface. 
+      <br></br>
+        Technologies Used:
+          <li>JavaScript</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>React.js</li>
+          <li>Node.js</li>
+          <li>MySQL (Database)</li>
+          <li>Azure API</li>
+          <li>OpenAI API</li>
+      <br />
+      <button class="button" onclick="location.href='contact.html'">Contact me for instalation</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-card">
+  <div class="card">
+    <div class="head">Packaging Company Website</div>
+    <div class="content">
+      Created a company website designed to attract more customers and generate leads, while optimizing SEO for enhanced visibility and improved sales.\
+        <br></br>
+        Technologies Used:
+          <li>WordPress</li>
+          <li>Google SEO best Practices</li>
+      <br />
+      <button class="button" onclick="location.href='https://www.partnerpak.eu'">Go to Website</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-card">
+  <div class="card">
+    <div class="head">AI Chat Bot</div>
+    <div class="content">
+      Developed a chatbot to enhance user experience, providing near-instant responses with a 97% success rate, eliminating long wait times and improving customer satisfaction.        <br></br>
+        Technologies Used:
+          <li>Python</li>
+          <li>Html5</li>
+          <li>CSS3</li>
+      <br />
+      <button class="button" onclick="location.href='contact.html'">Contact me for instalation</button>
+    </div>
+  </div>
+</div>
+
+<div class="col-card">
+  <div class="card">
+    <div class="head">Objective Colleague Performance Rating System</div>
+    <div class="content">
+      Developed an Excel-based performance rating system to evaluate colleagues objectively and transparently. The system tracks key performance indicators, providing valuable feedback and identifying areas for improvement to support a positive work environment.       
+      <br> </br>
+      Technologies Used:
+          <li>Excel</li>
+          <li>PowerBi</li>
+      <br />
+      <button class="button" onclick="location.href='contact.html'">Contact me for instalation</button>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+  <script>
+      const handleNavigation = (targetPage) => {
+
+// Save target page in session storage so we can retrieve it after loading
+      sessionStorage.setItem("redirectTo", targetPage);
+
+      // Redirect to loading page
+      window.location.href = "loading.html";
+      };
+  </script>
+
+  </body>
+
+</html>
