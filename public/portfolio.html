@@ -415,7 +415,8 @@
           <li>MySQL (Database)</li>
           <li>XML-based UI</li>
       <br />
-      <button class="button" onclick="location.href='https://github.com/Frenzy238/First_Java_Desktop_App'">Go to repository</button>
+      <button class="button" onclick="window.open('https://github.com/Frenzy238/First_Java_Desktop_App', '_blank')">Go to repository</button>
+
       
     </div>
   </div>
@@ -423,9 +424,9 @@
 
 <div class="col-card">
   <div class="card">
-    <div class="head">Website portfolio with React.js, Three.js etc.</div>
+    <div class="head">The Portfolio Website you are on  created with React.js, Three.js etc.</div>
     <div class="content">
-      Created a modern portfolio website with 3D object and a contact feature, with lots of cards.        
+      Created a modern portfolio website with 3D object and a contact feature, with lots of cards. On my way to create a mobile version of the site.
       <br></br>
         Technologies Used:
           <li>JavaScript</li>
@@ -434,8 +435,8 @@
           <li>React.js</li>
           <li>Three.js</li>
       <br />
-      <button class="button">Go to Website</button>
-      <button class="button"  onclick="location.href='https://github.com/Frenzy238/Portfolio_Website'"  >Go to repository</button>
+      <button class="button" onclick="window.open('https://github.com/Frenzy238/Portfolio_Website', '_blank')">Go to repository</button>
+
     </div>
   </div>
 </div>
@@ -456,7 +457,7 @@
           <li>Azure API</li>
           <li>OpenAI API</li>
       <br />
-      <button class="button" onclick="location.href='contact.html'">Contact me for instalation</button>
+      <button class="button" onclick="window.open('contact.html', '_blank')">Contact me for instalation</button>
     </div>
   </div>
 </div>
@@ -465,13 +466,14 @@
   <div class="card">
     <div class="head">Packaging Company Website</div>
     <div class="content">
-      Created a company website designed to attract more customers and generate leads, while optimizing SEO for enhanced visibility and improved sales.\
+      Created a company website designed to attract more customers and generate leads, while optimizing SEO for enhanced visibility and improved sales.
         <br></br>
         Technologies Used:
           <li>WordPress</li>
           <li>Google SEO best Practices</li>
       <br />
-      <button class="button" onclick="location.href='https://www.partnerpak.eu'">Go to Website</button>
+      <button class="button" onclick="window.open('https://www.partnerpak.eu', '_blank')">Go to Website</button>
+
     </div>
   </div>
 </div>
@@ -480,13 +482,13 @@
   <div class="card">
     <div class="head">AI Chat Bot</div>
     <div class="content">
-      Developed a chatbot to enhance user experience, providing near-instant responses with a 97% success rate, eliminating long wait times and improving customer satisfaction.        <br></br>
+      Developed a chatbot to enhance user experience, providing near-instant responses with a 98% success rate, eliminating long wait times and improving customer satisfaction.        <br></br>
         Technologies Used:
           <li>Python</li>
           <li>Html5</li>
           <li>CSS3</li>
       <br />
-      <button class="button" onclick="location.href='contact.html'">Contact me for instalation</button>
+      <button class="button" onclick="window.open('contact.html', '_blank')">Contact me for instalation</button>
     </div>
   </div>
 </div>
@@ -501,7 +503,7 @@
           <li>Excel</li>
           <li>PowerBi</li>
       <br />
-      <button class="button" onclick="location.href='contact.html'">Contact me for instalation</button>
+      <button class="button" onclick="window.open('contact.html', '_blank')">Contact me for instalation</button>
     </div>
   </div>
 </div>
@@ -513,11 +515,8 @@
 
   <script>
       const handleNavigation = (targetPage) => {
-
-// Save target page in session storage so we can retrieve it after loading
       sessionStorage.setItem("redirectTo", targetPage);
 
-      // Redirect to loading page
       window.location.href = "loading.html";
       };
   </script>
